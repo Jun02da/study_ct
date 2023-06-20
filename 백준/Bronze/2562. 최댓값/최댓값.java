@@ -1,22 +1,22 @@
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.InputStreamReader;
 public class Main {
 	public static void main(String[] args) throws NumberFormatException, IOException {
-        Scanner scanner = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] num = new int[9];
 
-        int max = Integer.MIN_VALUE;
-        int maxIndex = -1;
+        int max = 0;
+        int maxIndex = 0;
 
-        for (int i = 0; i < 9; i++) {
-            int num = scanner.nextInt();
-            if (num > max) {
-                max = num;
-                maxIndex = i + 1;
-            }
+        for(int i=0;i<num.length;i++) {
+        	num[i] = Integer.parseInt(br.readLine());
+        	if(num[i]>max) {
+        		max = num[i];
+        		maxIndex = i+1;
+        	}
         }
-
-        scanner.close();
-
+        
         System.out.println(max);
         System.out.println(maxIndex);
 	}
