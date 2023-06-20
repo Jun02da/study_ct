@@ -5,11 +5,13 @@ public class Main {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int a = Integer.parseInt(br.readLine());
+		StringBuilder sb = new StringBuilder();
 		for(int i=0;i<a;i++) {
 			for(int j=0;j<=i;j++) {
-				System.out.print("*");
+				sb.append("*");
 			}
-			System.out.println();
+			sb.append("\n");
 		}
+		System.out.println(sb);
 	}
 }
