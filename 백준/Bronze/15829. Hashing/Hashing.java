@@ -11,9 +11,11 @@ public class Main {
         String str = br.readLine();
         char[] arr = str.toCharArray();
         int sum = 0;
+        int pow = 1;
 
         for(int i =0;i<L;i++){
-            sum += (arr[i] - 'a' + 1)* (int) Math.pow(31, i);
+            sum += (arr[i] - 'a' + 1) * pow % M; //분배법칙
+            pow = pow * 31 % M; //분배법칙
         }
         int hash = sum % M;
         System.out.println(hash);
